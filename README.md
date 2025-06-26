@@ -19,15 +19,15 @@ This notebook provides a foundational introduction to LangGraph by constructing 
 
 * **State Definition:** How to define the shared graph state using `TypedDict`, in this case, a simple string `graph_info`.
 * **Nodes as Functions:** Defining graph nodes as standard Python functions that receive and return updates to the graph's `State`.
-    * Examples include `start_play`, `cricket`, and `badminton` functions.
-* **Conditional Edges:** Implementing dynamic routing based on a node's output. The `random_play` function dictates the next step (either `cricket` or `badminton`) based on a random condition.
+    * Examples include `start_play`, `cricket`, and `football` functions.
+* **Conditional Edges:** Implementing dynamic routing based on a node's output. The `random_play` function dictates the next step (either `cricket` or `football`) based on a random condition.
 * **Graph Construction:** Using `StateGraph` to add nodes and define edges, including the special `START` and `END` nodes for workflow entry and exit.
 * **Graph Compilation:** Compiling the graph for execution and basic structure checks.
 * **Graph Visualization:** Generating a visual representation of the graph using Mermaid diagrams for better understanding of the workflow flow.
 
 ### Workflow Flow:
 
-The graph starts at `START`, moves to `start_play`, then `random_play` makes a decision to proceed to either `cricket` or `badminton`, and finally, both paths converge to `END`.
+The graph starts at `START`, moves to `start_play`, then `random_play` makes a decision to proceed to either `cricket` or `football`, and finally, both paths converge to `END`.
 
 ---
 
@@ -46,7 +46,7 @@ This notebook builds upon the basic graph concepts to implement a simple, conver
 
 ### Workflow Flow:
 
-The chatbot typically starts by receiving a user message, which updates the `messages` in the state. The `superbot` (or `mybot`) node processes these messages using an LLM to generate a response, which is then added back to the `messages` list for subsequent turns.
+The chatbot typically starts by receiving a user message, which updates the `messages` in the state. The `mybot` node processes these messages using an LLM to generate a response, which is then added back to the `messages` list for subsequent turns.
 
 ---
 
